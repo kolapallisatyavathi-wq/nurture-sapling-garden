@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep gardening data and rules in `src/lib`, UI in `src/components`, and local persistence behind a replaceable browser-storage adapter; this keeps the prototype local-only while preserving clear seams for future integrations.
