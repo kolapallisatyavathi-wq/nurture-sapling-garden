@@ -1,0 +1,212 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * - Keep every @import in this top block, above @theme and the rest of the file.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * Rich botanical theme for Nurture Sapling:
+ * - Primary: Deep forest botanical emerald
+ * - Leaf: Lush, vibrant foliage green
+ * - Soil: Warm terracotta / earthy sienna
+ * - Sun: Golden harvest amber
+ * - Cream: Organic warm parchment surface
+ * - Card & Border: High contrast, clean, modern hierarchy
+ */
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-leaf: var(--leaf);
+  --color-leaf-foreground: var(--leaf-foreground);
+  --color-soil: var(--soil);
+  --color-soil-foreground: var(--soil-foreground);
+  --color-sun: var(--sun);
+  --color-cream: var(--cream);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Clean, soothing natural canvas with subtle organic warmth */
+  --background: oklch(0.988 0.005 125);
+  --foreground: oklch(0.18 0.032 145);
+
+  /* Elevated pristine white card surfaces */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.032 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.032 145);
+
+  /* Deep botanical emerald primary */
+  --primary: oklch(0.34 0.095 146);
+  --primary-foreground: oklch(0.99 0.005 140);
+
+  /* Fresh herbal sage secondary */
+  --secondary: oklch(0.95 0.02 140);
+  --secondary-foreground: oklch(0.25 0.075 146);
+
+  /* Subtle warm sage-gray muted */
+  --muted: oklch(0.955 0.012 125);
+  --muted-foreground: oklch(0.48 0.028 145);
+
+  /* Interactive accent */
+  --accent: oklch(0.945 0.025 140);
+  --accent-foreground: oklch(0.24 0.08 146);
+
+  /* Semantic destructive */
+  --destructive: oklch(0.56 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  /* Defined, crisp boundaries with high contrast */
+  --border: oklch(0.90 0.012 135);
+  --input: oklch(0.89 0.015 135);
+  --ring: oklch(0.44 0.12 146);
+
+  /* Nurture Sapling signature botanical accents */
+  --leaf: oklch(0.46 0.145 145);
+  --leaf-foreground: oklch(0.99 0.005 140);
+  --soil: oklch(0.50 0.13 50);
+  --soil-foreground: oklch(0.99 0 0);
+  --sun: oklch(0.82 0.14 80);
+  --cream: oklch(0.975 0.018 95);
+
+  /* Charts */
+  --chart-1: oklch(0.46 0.145 145);
+  --chart-2: oklch(0.50 0.13 50);
+  --chart-3: oklch(0.82 0.14 80);
+  --chart-4: oklch(0.62 0.16 160);
+  --chart-5: oklch(0.70 0.12 110);
+
+  /* Sidebar */
+  --sidebar: oklch(0.99 0.006 125);
+  --sidebar-foreground: oklch(0.18 0.032 145);
+  --sidebar-primary: oklch(0.34 0.095 146);
+  --sidebar-primary-foreground: oklch(0.99 0.005 140);
+  --sidebar-accent: oklch(0.945 0.025 140);
+  --sidebar-accent-foreground: oklch(0.22 0.08 146);
+  --sidebar-border: oklch(0.90 0.012 135);
+  --sidebar-ring: oklch(0.44 0.12 146);
+}
+
+.dark {
+  --background: oklch(0.14 0.025 150);
+  --foreground: oklch(0.97 0.01 140);
+
+  --card: oklch(0.18 0.028 150);
+  --card-foreground: oklch(0.97 0.01 140);
+  --popover: oklch(0.18 0.028 150);
+  --popover-foreground: oklch(0.97 0.01 140);
+
+  --primary: oklch(0.68 0.145 146);
+  --primary-foreground: oklch(0.14 0.03 150);
+
+  --secondary: oklch(0.24 0.035 150);
+  --secondary-foreground: oklch(0.95 0.015 140);
+
+  --muted: oklch(0.22 0.025 150);
+  --muted-foreground: oklch(0.68 0.025 145);
+
+  --accent: oklch(0.24 0.035 150);
+  --accent-foreground: oklch(0.95 0.015 140);
+
+  --destructive: oklch(0.68 0.20 25);
+  --destructive-foreground: oklch(0.98 0.005 140);
+
+  --border: oklch(0.26 0.02 150);
+  --input: oklch(0.26 0.02 150);
+  --ring: oklch(0.68 0.145 146);
+
+  --leaf: oklch(0.68 0.145 145);
+  --leaf-foreground: oklch(0.14 0.03 150);
+  --soil: oklch(0.68 0.12 55);
+  --soil-foreground: oklch(0.14 0.03 150);
+  --sun: oklch(0.82 0.13 85);
+  --cream: oklch(0.20 0.025 150);
+
+  --chart-1: oklch(0.68 0.145 145);
+  --chart-2: oklch(0.68 0.12 55);
+  --chart-3: oklch(0.82 0.13 85);
+  --chart-4: oklch(0.62 0.16 160);
+  --chart-5: oklch(0.70 0.12 110);
+
+  --sidebar: oklch(0.16 0.025 150);
+  --sidebar-foreground: oklch(0.97 0.01 140);
+  --sidebar-primary: oklch(0.68 0.145 146);
+  --sidebar-primary-foreground: oklch(0.14 0.03 150);
+  --sidebar-accent: oklch(0.24 0.035 150);
+  --sidebar-accent-foreground: oklch(0.95 0.015 140);
+  --sidebar-border: oklch(0.26 0.02 150);
+  --sidebar-ring: oklch(0.68 0.145 146);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
